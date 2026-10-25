@@ -36,13 +36,7 @@ Luego visitá [localhost:5500](http://localhost:5500). No hace falta instalar pa
 ### Vista previa al compartir
 
 `index.html` incluye Open Graph y Twitter Card en el HTML inicial. La imagen pública es
-`https://flor125.dev/assets/images/portfolio-social.jpg` (1200 × 630 px), compuesta con el retrato existente y los colores y la cuadrícula del portfolio. No requiere JavaScript ni cambia el diseño de la página.
-
-Para regenerarla en macOS, desde la raíz del repositorio:
-
-```bash
-swift -module-cache-path /tmp/portfolio-swift-cache scripts/generate-social-image.swift
-```
+`https://flor125.dev/assets/images/portfolio-preview-v2.jpg` (1200 × 630 px), basada en la captura del portfolio con fondo claro, cuadrícula y píxeles de colores, con los textos «Florencia Sombra», «web development · backend» y «flor125.dev». No requiere JavaScript ni cambia el diseño de la página.
 
 Después de publicar en GitHub Pages:
 
