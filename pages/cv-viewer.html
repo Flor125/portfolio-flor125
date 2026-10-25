@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Visor del CV</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font:13px Arial,Helvetica,sans-serif;color:#27272a;background:#f4f4f5}button,input,select{font:inherit}button,select{border:1px solid #e4e4e7;background:white;border-radius:7px;padding:8px;cursor:pointer;color:inherit}button:hover{background:#f4f4f5}button:disabled{opacity:.4;cursor:default}:focus-visible{outline:2px solid #88734c;outline-offset:2px}.toolbar{display:flex;align-items:center;gap:7px;flex-wrap:wrap;padding:10px 12px;background:white;border-bottom:1px solid #e4e4e7}.toolbar input{width:48px;padding:8px;border:1px solid #e4e4e7;border-radius:7px}.divider{width:1px;height:24px;background:#e4e4e7;margin:0 5px}.workspace{display:flex;height:calc(100dvh - 110px)}aside{width:135px;flex-shrink:0;overflow:auto;padding:14px;background:#fafafa;border-right:1px solid #e4e4e7}aside[hidden]{display:none}.thumb{display:block;width:100%;margin-bottom:14px;padding:8px}.thumb[aria-current]{border-color:#88734c;background:#f2efe7}.thumb canvas{width:100%;display:block;margin-bottom:8px}.paper{overflow:auto;flex:1;padding:24px;text-align:center;min-width:0}.paper canvas{display:block;margin:0 auto;background:white;box-shadow:0 2px 15px #0002}.status{margin:0;padding:10px 16px;font-size:12px;background:white;border-top:1px solid #e4e4e7;min-height:36px}.loading{padding:32px}.search{display:flex;gap:8px;padding:10px 12px;background:white;border-bottom:1px solid #ddd}.search[hidden]{display:none}.search input{min-width:0;flex:1;padding:8px;border:1px solid #ddd;border-radius:6px}@media(max-width:540px){aside{width:90px;padding:8px}.paper{padding:12px}.toolbar{gap:4px}.divider{margin:0 2px}.workspace{height:calc(100dvh - 155px)}}
+</style></head>
+<body>
+<div class="toolbar" aria-label="Controles del PDF">
+<button id="sidebar" aria-label="Mostrar u ocultar miniaturas" aria-expanded="true">☷</button><span class="divider"></span>
+<button id="prev" aria-label="Página anterior" disabled>‹</button><label><span hidden>Página</span><input id="page" type="number" min="1" value="1" aria-label="Número de página" disabled></label><span id="total">/ —</span><button id="next" aria-label="Página siguiente" disabled>›</button><span class="divider"></span>
+<button id="minus" aria-label="Alejar" disabled>−</button><select id="zoom" aria-label="Zoom" disabled><option value="fit">Ajustar ancho</option><option value="0.5">50%</option><option value="0.75">75%</option><option value="1">100%</option><option value="1.25">125%</option><option value="1.5">150%</option><option value="2">200%</option></select><button id="plus" aria-label="Acercar" disabled>+</button><button id="rotate" aria-label="Girar 90 grados" disabled>↻</button><button id="search-toggle" aria-label="Buscar en el documento" disabled>⌕</button>
+</div>
+<form class="search" hidden><input id="query" aria-label="Texto a buscar" placeholder="Buscar en el CV"><button>Buscar siguiente</button></form>
+<div class="workspace"><aside aria-label="Miniaturas de páginas"></aside><main class="paper" aria-label="Página del CV"><p class="loading">Cargando CV…</p></main></div>
+<p class="status" role="status" aria-live="polite">Preparando el documento.</p>
+<script type="module" src="../assets/js/cv-viewer.js"></script>
+</body></html>

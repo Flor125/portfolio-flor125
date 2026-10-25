@@ -51,11 +51,7 @@ Luego visitá [localhost:5500](http://localhost:5500). No hace falta instalar pa
 │   ├── images/                 # Retrato y mockups
 │   └── documents/              # CV en español y Resume en inglés
 └── pages/
-    ├── cv-viewer.html          # Interfaz del visor
-    ├── sobre-mi.html           # Redirección a la sección correspondiente
-    ├── proyectos.html
-    ├── experiencia.html
-    └── contacto.html
+    └── cv-viewer.html          # Interfaz del visor
 ```
 
 ### Proyectos destacados
@@ -118,7 +114,6 @@ Visit [localhost:5500](http://localhost:5500). No npm installation is required. 
 - `assets/images/`: portrait and project mockups.
 - `assets/documents/`: Spanish CV and English resume.
 - `pages/cv-viewer.html`: PDF viewer interface.
-- Other HTML files in `pages/`: redirects to their corresponding sections on the main page.
 
 ### Featured projects
 
