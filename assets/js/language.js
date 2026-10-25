@@ -1,7 +1,27 @@
 (() => {
     const translations = {
+        'EF SET Cert: ver certificado C1 Advanced (abre en otra pestaña)': 'EF SET Cert: view C1 Advanced certificate (opens in a new tab)',
+        'Certificado EF SET C1 Advanced': 'EF SET C1 Advanced certificate',
+        'IBM: ver certificado en Credly (abre en otra pestaña)': 'IBM: view certificate on Credly (opens in a new tab)',
+        'Certificado Modernize Applications with IBM CICS': 'Modernize Applications with IBM CICS certificate',
+        'IBM & Coursera: ver certificado en Coursera (abre en otra pestaña)': 'IBM & Coursera: view certificate on Coursera (opens in a new tab)',
+        'Certificado IBM z/OS Mainframe Practitioner': 'IBM z/OS Mainframe Practitioner certificate',
+        'IBM & LearnQuest: ver certificado en Coursera (abre en otra pestaña)': 'IBM & LearnQuest: view certificate on Coursera (opens in a new tab)',
+        'Certificado IBM Mainframe Developer de IBM y LearnQuest': 'IBM Mainframe Developer certificate from IBM and LearnQuest',
+        'Universidad Nacional de Villa Mercedes: consultar título en el registro de graduados (abre en otra pestaña)': 'Universidad Nacional de Villa Mercedes: verify degree in the graduate registry (opens in a new tab)',
+        'Tarjeta anterior': 'Previous card', 'Tarjeta siguiente': 'Next card',
+        'Educación': 'Education',
+        '04 / Formación continua': '04 / Continuous learning',
+        'Educación y certificados': 'Education & certifications',
+        'Mi formación académica y los aprendizajes que acompañan mi desarrollo profesional.': 'My academic background and the learning experiences supporting my professional development.',
+        'Programadora Universitaria de Sistemas': 'Associate Degree in System Programming',
+        'Institución y período por completar.': 'Institution and dates to be added.',
+        'Certificados': 'Certifications',
+        'Aprendizaje continuo': 'Continuous learning',
+        'Próximamente voy a compartir mis cursos y certificaciones, con sus credenciales.': 'I will soon share my courses and certifications, along with their credentials.',
+
         'Ir al contenido': 'Skip to content', 'Inicio': 'Home', 'Sobre mí': 'About me', 'Proyectos': 'Projects', 'Experiencia': 'Experience', 'Contacto': 'Contact',
-        'Programadora Universitaria de Sistemas, enfocada en desarrollo backend y construcción de aplicaciones web.': 'Associate Degree in System Programming, focused on backend development and building web applications.',
+        'Desarrolladora backend con experiencia en Java, Python y modernización de sistemas mainframe.': 'Backend developer with experience in Java, Python, and mainframe system modernization.',
         'Explorá mis proyectos': 'Explore my projects', '01 / Sobre mí': '01 / About me', 'Un poco de mí': 'A little about me',
         'Soy una persona curiosa, preserverante y con muchas ganas de aplicar mis conocimientos en empresas. Disfruto enfrentar desafíos, investigar cómo funcionan las cosas y encontrar soluciones. Me gusta trabajar en equipo, intercambiar ideas y aprender de otras perspectivas, pero también tengo la iniciativa para explorar y resolver problemas por mi cuenta. Creo en el aprendizaje constante, la creatividad y en mejorar un poquito con cada proyecto.': 'I am curious, persistent, and eager to apply my knowledge in a professional setting. I enjoy tackling challenges, exploring how things work, and finding solutions. I like working in teams, exchanging ideas, and learning from different perspectives, while also taking the initiative to explore and solve problems independently. I believe in continuous learning, creativity, and getting a little better with every project.',
         'Mi stack': 'My tech stack', 'Bases de datos': 'Databases', 'DevOps y herramientas': 'DevOps & tools',
@@ -11,7 +31,7 @@
         'Sistema de gestión de registros electorales desarrollado en Java, con interfaz gráfica y persistencia de datos en MySQL': 'Electoral record management system built in Java, with a graphical interface and MySQL data persistence.',
         'Sistema de gestión de inventario y ventas desplegado en IBM LinuxONE Community Cloud, que integra una aplicación web con procesamiento batch en COBOL.': 'Inventory and sales management system deployed on IBM LinuxONE Community Cloud, integrating a web application with COBOL batch processing.',
         'Aplicación móvil en desarrollo para crear CVs, adaptarlos a ofertas laborales y organizar postulaciones.': 'Mobile app in development for creating resumes, tailoring them to job openings, and tracking applications.',
-        'Privado · En desarrollo': 'Private · In development', '03 / Mi recorrido': '03 / My journey',
+        'En desarrollo': 'In development', 'Privado · En desarrollo': 'Private · In development', '03 / Mi recorrido': '03 / My journey',
         'Contenido de ejemplo · Próximamente, mi experiencia y mis proyectos reales.': 'My experience, collaborations, and professional journey.',
         '2026 – Actualidad': '2026 – Present', 'Puesto': 'Role', 'Ubicación': 'Location', 'Sector': 'Industry', 'Remoto': 'Remote',
         'Desarrollo de software / Open Source': 'Software development / Open Source',
@@ -33,7 +53,7 @@
         'Hablemos': 'Get in touch', 'Estoy buscando oportunidades como desarrolladora de software, especialmente en backend, y también participo en proyectos freelance.': 'I am looking for software development opportunities, especially in backend, and I also take on freelance projects.',
         'Correo electrónico': 'Email', 'Ver perfil': 'View profile', 'Pausar globo': 'Pause globe', 'Girar globo': 'Rotate globe',
         'Dejame un mensaje': 'Send me a message', 'Vista previa: el envío todavía no está conectado.': 'Preview: message delivery is not connected yet.',
-        'Nombre completo': 'Full name', 'Tu nombre': 'Your name', 'Empresa': 'Company', '(opcional)': '(optional)', 'Tu empresa o equipo': 'Your company or team',
+        'Nombre completo': 'Full name', 'Tu nombre': 'Your name', 'nombre@ejemplo.com': 'name@example.com', 'Empresa': 'Company', '(opcional)': '(optional)', 'Tu empresa o equipo': 'Your company or team',
         'Mensaje': 'Message', 'Contame sobre tu idea…': 'Tell me about your idea…', 'Enviar': 'Send',
         'Ideas, procesos y proyectos.': 'Ideas, processes, and projects.', 'Explorá': 'Explore', 'Mi recorrido': 'My journey', 'Conectemos': 'Connect', 'Volver arriba ↑': 'Back to top ↑',
         'Ver mi CV': 'View my CV', 'Mi CV': 'My CV', 'Abrir PDF ↗': 'Open PDF ↗', 'Descargar ↓': 'Download ↓', 'Mi CV, próximamente': 'My CV, coming soon',
@@ -102,7 +122,51 @@
         const index = buttons.indexOf(document.activeElement);
         if (event.key === 'ArrowDown' || event.key === 'ArrowUp') { event.preventDefault(); buttons[(index + (event.key === 'ArrowDown' ? 1 : -1) + buttons.length) % buttons.length].focus(); }
     });
-    selector.querySelectorAll('[data-language]').forEach((button) => button.addEventListener('click', () => { setLanguage(button.dataset.language); close(true); }));
+    let languageTimer;
+    let languageAnimations = [];
+    let pendingLanguage = null;
+    const animatedText = [...new Set(textNodes.map(({ node }) => node.parentElement))];
+    function changeLanguage(next) {
+        close(true);
+        clearTimeout(languageTimer);
+        languageAnimations.forEach((animation) => animation.cancel());
+        languageAnimations = [];
+        pendingLanguage = null;
+        if (next === language || matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            setLanguage(next);
+            return;
+        }
+        pendingLanguage = next;
+        // Fade existing letters out before swapping their translations.
+        const out = document.body.animate([
+            { opacity: 1, filter: 'blur(0px)' },
+            { opacity: .15, filter: 'blur(2px)' }
+        ], { duration: 400, easing: 'ease-in', fill: 'forwards' });
+        languageAnimations.push(out);
+        languageTimer = setTimeout(() => {
+            setLanguage(next);
+            pendingLanguage = null;
+            out.cancel();
+            languageAnimations.push(document.body.animate([
+                { opacity: .15 }, { opacity: 1 }
+            ], { duration: 600, easing: 'ease-out' }));
+            animatedText.forEach((element, index) => {
+                const delay = (index % 5) * 25;
+                languageAnimations.push(element.animate([
+                    { opacity: 0, filter: 'blur(4px)' },
+                    { opacity: 1, filter: 'blur(0px)' }
+                ], { duration: 500, delay, easing: 'ease-out', fill: 'backwards' }));
+            });
+        }, 400);
+    }
+    selector.querySelectorAll('[data-language]').forEach((button) => button.addEventListener('click', () => changeLanguage(button.dataset.language)));
+    matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change', (event) => {
+        if (!event.matches) return;
+        clearTimeout(languageTimer);
+        languageAnimations.forEach((animation) => animation.cancel());
+        if (pendingLanguage) setLanguage(pendingLanguage);
+        pendingLanguage = null;
+    });
     document.addEventListener('click', (event) => { if (!selector.contains(event.target)) close(); });
     selector.addEventListener('focusout', (event) => { if (!selector.contains(event.relatedTarget)) close(); });
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && !menu.hidden) { event.stopPropagation(); close(true); } });
