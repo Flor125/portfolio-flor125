@@ -33,6 +33,25 @@ python3 -m http.server 5500
 
 Luego visitá [localhost:5500](http://localhost:5500). No hace falta instalar paquetes de npm. Usá un servidor local para que el visor del CV pueda cargar los documentos. Los recursos de CDN requieren conexión a internet.
 
+### Vista previa al compartir
+
+`index.html` incluye Open Graph y Twitter Card en el HTML inicial. La imagen pública es
+`https://flor125.dev/assets/images/portfolio-social.jpg` (1200 × 630 px), compuesta con el retrato existente y los colores y la cuadrícula del portfolio. No requiere JavaScript ni cambia el diseño de la página.
+
+Para regenerarla en macOS, desde la raíz del repositorio:
+
+```bash
+swift -module-cache-path /tmp/portfolio-swift-cache scripts/generate-social-image.swift
+```
+
+Después de publicar en GitHub Pages:
+
+1. Esperá a que termine el despliegue y abrí la URL de la imagen para comprobar que carga.
+2. Revisá el código fuente de `https://flor125.dev/` y buscá `og:image` y `twitter:card`.
+3. Ingresá `https://flor125.dev/` en [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/) para revisar y actualizar su vista previa.
+4. Probá también [Meta Sharing Debugger](https://developers.facebook.com/tools/debug/) y solicitá una nueva extracción si muestra datos anteriores. Esto no garantiza actualizar la caché de WhatsApp.
+5. Pegá el enlace en un mensaje nuevo de WhatsApp y esperá a que aparezca la tarjeta antes de enviarlo. Una vista previa anterior puede permanecer en caché; si cambiás la imagen en el futuro, usá un nombre nuevo y actualizá ambas etiquetas de imagen.
+
 ### Estructura
 
 ```text
