@@ -52,7 +52,7 @@
         'Conectemos.': 'Let’s connect.', '¿Tenés una idea, un proyecto o una propuesta? Me gustaría conocerla y pensar qué podemos crear juntos.': 'Have an idea, a project, or a proposal? I would love to hear about it and explore what we can create together.',
         'Hablemos': 'Get in touch', 'Estoy buscando oportunidades como desarrolladora de software, especialmente en backend, y también participo en proyectos freelance.': 'I am looking for software development opportunities, especially in backend, and I also take on freelance projects.',
         'Correo electrónico': 'Email', 'Ver perfil': 'View profile', 'Pausar globo': 'Pause globe', 'Girar globo': 'Rotate globe',
-        'Dejame un mensaje': 'Send me a message', 'Vista previa: el envío todavía no está conectado.': 'Preview: message delivery is not connected yet.',
+        'Dejame un mensaje': 'Send me a message', 'Tu mensaje llegará a mi correo a través de FormSubmit.': 'Your message will reach my inbox through FormSubmit.',
         'Nombre completo': 'Full name', 'Tu nombre': 'Your name', 'nombre@ejemplo.com': 'name@example.com', 'Empresa': 'Company', '(opcional)': '(optional)', 'Tu empresa o equipo': 'Your company or team',
         'Mensaje': 'Message', 'Contame sobre tu idea…': 'Tell me about your idea…', 'Enviar': 'Send',
         'Ideas, procesos y proyectos.': 'Ideas, processes, and projects.', 'Explorá': 'Explore', 'Mi recorrido': 'My journey', 'Conectemos': 'Connect', 'Volver arriba ↑': 'Back to top ↑',

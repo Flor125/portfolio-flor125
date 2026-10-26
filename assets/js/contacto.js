@@ -1,7 +1,5 @@
 // Le dessin reste visible si les données géographiques ne sont pas disponibles.
 (() => {
-    const form = document.querySelector('.contact-form');
-    form.addEventListener('submit', (event) => event.preventDefault());
     if (!window.d3 || !window.topojson) return;
     const svg = d3.select('.contact-globe');
     const toggle = document.querySelector('.globe-toggle');
