@@ -4,16 +4,17 @@ const vm = require('node:vm');
 const fs = require('node:fs');
 const source = fs.readFileSync(require('node:path').join(__dirname,'../../assets/js/contact-form.js'),'utf8');
 function setup(fetch) {
-    const handlers = {};
+    const handlers = {}, dialogHandlers = {};
+    let closeClick;
     const button = { disabled:false, focus() {} }, status = {textContent:''};
-    const dialog = { shown:false, querySelector:()=>({addEventListener(){}}), addEventListener(){}, showModal(){this.shown=true;} };
+    const dialog = { shown:false, classList:{add(){},remove(){}}, querySelector:()=>({addEventListener:(name,fn)=>{closeClick=fn;}}), addEventListener:(name,fn)=>{dialogHandlers[name]=fn;}, close(){this.shown=false;}, showModal(){this.shown=true;} };
     const form = { dataset:{contactEndpoint:'https://example.vercel.app/api/contact'}, resetCount:0,
         querySelector:s=>s.includes('submit')?button:status, addEventListener:(name,fn)=>handlers[name]=fn,
         reportValidity:()=>true, setAttribute(){},removeAttribute(){},reset(){this.resetCount++;} };
     vm.runInNewContext(source,{ document:{querySelector:s=>s==='.contact-form'?form:dialog},
-        window:{},fetch,FormData:class {get(key){return key==='email'?'ana@example.com':'hola';}},
+        window:{matchMedia:()=>({matches:false})},fetch,FormData:class {get(key){return key==='email'?'ana@example.com':'hola';}},
         AbortController,setTimeout,clearTimeout });
-    return {form,button,status,dialog,submit:()=>handlers.submit({preventDefault(){}})};
+    return {form,button,status,dialog,close:()=>closeClick(),cancel:()=>dialogHandlers.cancel({preventDefault(){}}),submit:()=>handlers.submit({preventDefault(){}})};
 }
 test('popup appears and fields reset only after confirmed API success',async()=>{
     const state=setup(async()=>({ok:true,json:async()=>({ok:true})}));await state.submit();
@@ -29,4 +30,15 @@ test('duplicate submissions are ignored while request is pending',async()=>{
     let resolve, calls=0;const state=setup(()=>{calls++;return new Promise(r=>resolve=r);});
     const first=state.submit();assert.equal(state.button.disabled,true);await state.submit();assert.equal(calls,1);
     resolve({ok:true,json:async()=>({ok:true})});await first;
+});
+
+test('close button and Escape preserve the dialog during the one-second fade',async()=>{
+    for (const action of ['close','cancel']) {
+        const state=setup(async()=>({ok:true,json:async()=>({ok:true})}));
+        await state.submit();
+        state[action]();
+        assert.equal(state.dialog.shown,true);
+        await new Promise(resolve=>setTimeout(resolve,1050));
+        assert.equal(state.dialog.shown,false);
+    }
 });

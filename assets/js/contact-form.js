@@ -7,7 +7,23 @@
     const dialog = document.querySelector('.contact-confirmation');
     const translate = (text) => window.portfolioTranslate?.(text) || text;
     let sending = false;
-    dialog.querySelector('button').addEventListener('click', () => dialog.close());
+    let closing = false;
+    async function closeConfirmation() {
+        if (closing) return;
+        closing = true;
+        dialog.classList.add('is-closing');
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+        }
+        dialog.close();
+        dialog.classList.remove('is-closing');
+        closing = false;
+    }
+    dialog.querySelector('button').addEventListener('click', closeConfirmation);
+    dialog.addEventListener('cancel', (event) => {
+        event.preventDefault();
+        closeConfirmation();
+    });
     dialog.addEventListener('close', () => button.focus({ preventScroll: true }));
     form.addEventListener('submit', async (event) => {
         event.preventDefault();
@@ -25,7 +41,10 @@
             });
             const data = await response.json();
             if (!response.ok || data.ok !== true) throw new Error('delivery');
-            form.reset(); status.textContent = ''; dialog.showModal();
+            clearTimeout(timeout);
+            form.reset(); status.textContent = '';
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            dialog.showModal();
         } catch {
             status.textContent = translate('No pudimos confirmar el envío. Tu mensaje sigue en el formulario. Podés intentar de nuevo o escribirme a sombraflorencia097@gmail.com.');
         } finally {
