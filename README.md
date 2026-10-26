@@ -54,7 +54,7 @@ Después de publicar en GitHub Pages:
 
 ### Envío propio con Nodemailer
 
-La función de correo y los pasos para desplegarla en Vercel están en [contact-api/README.md](contact-api/README.md). El popup de confirmación ya está preparado. La conexión se activa al configurar la URL pública de Vercel en el formulario; hasta entonces se conserva el envío actual con FormSubmit.
+El formulario usa la función de Nodemailer desplegada en `https://portfolio-flor125-contact-api.vercel.app/api/contact`. Al confirmar la aceptación por Gmail, muestra el popup «Envío confirmado». Si falla, conserva los campos. La configuración y los pasos de despliegue están en [contact-api/README.md](contact-api/README.md).
 
 ### Estructura
 
@@ -90,7 +90,7 @@ La función de correo y los pasos para desplegarla en Vercel están en [contact-
 - **Contenido:** editá `index.html`. Las traducciones están en `assets/js/language.js`.
 - **Estilos:** modificá `assets/css/styles.css`.
 - **CV:** los archivos están en `assets/documents/`; sus rutas por idioma se configuran con `data-pdf-es` y `data-pdf-en` en el diálogo del CV de `index.html`.
-- **Contacto:** el formulario envía por POST a FormSubmit y entrega los mensajes a `sombraflorencia097@gmail.com`, con el correo del visitante como Reply-To. El primer envío requiere confirmar el correo de activación de FormSubmit (revisar también spam). Conserva el CAPTCHA y la página de confirmación del servicio; funciona sin JavaScript. Para probarlo después del despliegue, completar y enviar el formulario, confirmar la activación y realizar un nuevo envío para verificar la recepción.
+- **Contacto:** envía mediante Nodemailer en Vercel. Las credenciales se configuran como variables privadas en Vercel. El correo del visitante se usa como Reply-To. Requiere JavaScript; se ofrece un enlace de correo como alternativa.
 
 ### Contacto
 
@@ -151,7 +151,7 @@ Visit [localhost:5500](http://localhost:5500). No npm installation is required. 
 - **Content:** edit `index.html`. Translations live in `assets/js/language.js`.
 - **Styles:** edit `assets/css/styles.css`.
 - **CV:** PDF files are stored in `assets/documents/`. Language-specific paths are configured through `data-pdf-es` and `data-pdf-en` on the CV dialog in `index.html`.
-- **Contact:** the form posts to FormSubmit, which delivers messages to `sombraflorencia097@gmail.com` with the visitor’s email as Reply-To. The first submission requires email activation (check spam too). CAPTCHA and confirmation are handled by the service; JavaScript is not required. After deployment, submit the form, confirm activation, and submit again to verify delivery.
+- **Contact:** sends through Nodemailer on Vercel. Credentials are private environment variables in Vercel; the visitor’s address is used as Reply-To. JavaScript is required, with an email link as an alternative.
 
 ### Contact
 

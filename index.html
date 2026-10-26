@@ -212,10 +212,8 @@
                     </div>
                     <button class="globe-toggle" type="button" hidden>Pausar globo</button>
                 </div>
-                <form class="contact-form" action="https://formsubmit.co/sombraflorencia097@gmail.com" method="POST" aria-labelledby="form-title" aria-describedby="form-note">
-                    <input type="hidden" name="_subject" value="Nuevo mensaje desde flor125.dev">
-                    <input type="hidden" name="_template" value="table">
-                    <div><h3 id="form-title">Dejame un mensaje</h3><p id="form-note">Tu mensaje llegará a mi correo a través de FormSubmit.</p></div>
+                <form class="contact-form" action="https://portfolio-flor125-contact-api.vercel.app/api/contact" data-contact-endpoint="https://portfolio-flor125-contact-api.vercel.app/api/contact" method="POST" aria-labelledby="form-title" aria-describedby="form-note">
+                    <div><h3 id="form-title">Dejame un mensaje</h3><p id="form-note">Tu mensaje llegará directamente a mi correo.</p></div>
                     <div class="contact-dots" aria-hidden="true"></div>
                     <div class="contact-honeypot" aria-hidden="true"><label>Sitio web<input name="website" tabindex="-1" autocomplete="off"></label></div>
                     <div class="contact-fields-row">
@@ -226,6 +224,7 @@
                     <div class="contact-field"><label for="contact-message">Mensaje</label><textarea id="contact-message" name="message" placeholder="Contame sobre tu idea…" rows="5" required maxlength="5000"></textarea></div>
                     <button class="contact-submit" type="submit" >Enviar <span aria-hidden="true">→</span></button>
                     <p class="contact-form-status" role="status" aria-live="polite"></p>
+                    <noscript>Para usar el formulario, activá JavaScript o <a href="mailto:sombraflorencia097@gmail.com">escribime por correo</a>.</noscript>
                 </form>
             </div>
         </section>

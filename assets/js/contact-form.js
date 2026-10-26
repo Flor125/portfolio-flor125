@@ -1,6 +1,5 @@
 (() => {
     const form = document.querySelector('.contact-form');
-    // The existing delivery method remains available until the Vercel URL is configured.
     const endpoint = form?.dataset.contactEndpoint;
     if (!endpoint) return;
     const button = form.querySelector('[type="submit"]');
