@@ -52,6 +52,10 @@ Después de publicar en GitHub Pages:
 4. Probá también [Meta Sharing Debugger](https://developers.facebook.com/tools/debug/) y solicitá una nueva extracción si muestra datos anteriores. Esto no garantiza actualizar la caché de WhatsApp.
 5. Pegá el enlace en un mensaje nuevo de WhatsApp y esperá a que aparezca la tarjeta antes de enviarlo. Una vista previa anterior puede permanecer en caché; si cambiás la imagen en el futuro, usá un nombre nuevo y actualizá ambas etiquetas de imagen.
 
+### Envío propio con Nodemailer
+
+La función de correo y los pasos para desplegarla en Vercel están en [contact-api/README.md](contact-api/README.md). El popup de confirmación ya está preparado. La conexión se activa al configurar la URL pública de Vercel en el formulario; hasta entonces se conserva el envío actual con FormSubmit.
+
 ### Estructura
 
 ```text

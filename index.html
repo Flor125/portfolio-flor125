@@ -217,6 +217,7 @@
                     <input type="hidden" name="_template" value="table">
                     <div><h3 id="form-title">Dejame un mensaje</h3><p id="form-note">Tu mensaje llegará a mi correo a través de FormSubmit.</p></div>
                     <div class="contact-dots" aria-hidden="true"></div>
+                    <div class="contact-honeypot" aria-hidden="true"><label>Sitio web<input name="website" tabindex="-1" autocomplete="off"></label></div>
                     <div class="contact-fields-row">
                         <div class="contact-field"><label for="contact-name">Nombre completo</label><input id="contact-name" name="name" autocomplete="name" placeholder="Tu nombre" required maxlength="120"></div>
                         <div class="contact-field"><label for="contact-company">Empresa <span>(opcional)</span></label><input id="contact-company" name="company" autocomplete="organization" placeholder="Tu empresa o equipo" maxlength="160"></div>
@@ -224,11 +225,18 @@
                     <div class="contact-field"><label for="contact-email">Correo electrónico</label><input id="contact-email" name="email" type="email" autocomplete="email" placeholder="nombre@ejemplo.com" required maxlength="254"></div>
                     <div class="contact-field"><label for="contact-message">Mensaje</label><textarea id="contact-message" name="message" placeholder="Contame sobre tu idea…" rows="5" required maxlength="5000"></textarea></div>
                     <button class="contact-submit" type="submit" >Enviar <span aria-hidden="true">→</span></button>
+                    <p class="contact-form-status" role="status" aria-live="polite"></p>
                 </form>
             </div>
         </section>
 </div>
     </main>
+    <dialog class="contact-confirmation" aria-labelledby="contact-confirmation-title" aria-describedby="contact-confirmation-description">
+        <span class="contact-confirmation-mark" aria-hidden="true">✓</span>
+        <h2 id="contact-confirmation-title">Envío confirmado</h2>
+        <p id="contact-confirmation-description">Gracias por escribirme. Te responderé a tu correo.</p>
+        <button class="contact-submit" type="button">Cerrar</button>
+    </dialog>
     <footer class="hwf-root" aria-label="Pie de página">
         <div class="hwf-top">
             <div class="hwf-brand"><strong>Sombra / Portfolio</strong><span>Ideas, procesos y proyectos.</span></div>
@@ -280,6 +288,7 @@
     <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/topojson-client@3/dist/topojson-client.min.js" defer></script>
     <script src="assets/js/contacto.js" defer></script>
+    <script src="assets/js/contact-form.js" defer></script>
     <script src="assets/js/language.js" defer></script>
     <script src="assets/js/theme.js" defer></script>
     <script src="assets/js/contact-cards.js" defer></script>

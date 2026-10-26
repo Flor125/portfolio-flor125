@@ -1219,3 +1219,15 @@ html[data-theme="light"] .education-intro, html[data-theme="light"] .education-c
     .education-prev { left: -12px; }
     .education-next { right: -12px; }
 }
+
+/* Confirmación del envío de contacto: hereda los colores del tema actual. */
+.contact-honeypot { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.contact-form-status:empty { display: none; }
+.contact-form-status { font-size: 14px; line-height: 1.5; overflow-wrap: anywhere; }
+.contact-submit:disabled { opacity: .6; cursor: wait; }
+.contact-confirmation { width: min(460px, calc(100% - 40px)); padding: 36px; border: 1px solid currentColor; border-radius: 24px; background: var(--background); color: var(--cream); font-family: var(--font-body); }
+.contact-confirmation::backdrop { background: #0009; backdrop-filter: blur(6px); }
+.contact-confirmation-mark { display: block; margin-bottom: 20px; font-size: 38px; }
+.contact-confirmation h2 { font-size: clamp(28px, 5vw, 38px); }
+.contact-confirmation p { line-height: 1.6; margin-bottom: 28px; }
+.contact-confirmation .contact-submit { width: 100%; }

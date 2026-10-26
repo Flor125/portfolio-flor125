@@ -1,5 +1,11 @@
 (() => {
     const translations = {
+        'Envío confirmado': 'Message sent',
+        'Gracias por escribirme. Te responderé a tu correo.': 'Thanks for getting in touch. I will reply to your email.',
+        'Cerrar': 'Close', 'Enviando…': 'Sending…',
+        'Tu mensaje llegará directamente a mi correo.': 'Your message will reach my inbox directly.',
+        'No pudimos confirmar el envío. Tu mensaje sigue en el formulario. Podés intentar de nuevo o escribirme a sombraflorencia097@gmail.com.': 'We could not confirm delivery. Your message is still in the form. Try again or email sombraflorencia097@gmail.com.',
+
         'EF SET Cert: ver certificado C1 Advanced (abre en otra pestaña)': 'EF SET Cert: view C1 Advanced certificate (opens in a new tab)',
         'Certificado EF SET C1 Advanced': 'EF SET C1 Advanced certificate',
         'IBM: ver certificado en Credly (abre en otra pestaña)': 'IBM: view certificate on Credly (opens in a new tab)',

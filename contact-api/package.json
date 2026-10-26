@@ -1,0 +1,14 @@
+{
+  "name": "portfolio-contact-api",
+  "private": true,
+  "version": "1.0.0",
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "nodemailer": "^10.2.1"
+  }
+}
