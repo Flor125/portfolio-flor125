@@ -1,12 +1,12 @@
 # Contenido relacional del portfolio
 
-Proyecto previsto: `https://iwllvbwevpflsbtquhiz.supabase.co`.
+Proyecto activo: `https://iwllvbwevpflsbtquhiz.supabase.co`.
 
 ## Estado remoto
 
-La implementación y sus pruebas locales están preparadas, pero no se ha confirmado ni aplicado en el proyecto remoto. En esta sesión de VS Code Copilot no estuvo disponible el MCP de Supabase configurado en Codex: el comando `codex` no está instalado y el cliente de base de datos genérico devolvió `Connection not found` (no es una conexión a este proyecto). Por ello no se pudieron inspeccionar las tablas, ejecutar la migración, obtener la publishable key, correr los advisors ni verificar la API o el portfolio conectado a datos reales.
+La migración `20261027024908_portfolio_content` fue aplicada al proyecto correcto después de comprobar que el esquema `public` y el historial de migraciones estaban vacíos. Las siete tablas tienen RLS. Se cargaron 3 proyectos, 3 experiencias, 5 credenciales, 6 párrafos de experiencia y 12 asociaciones de tecnologías.
 
-`publishableKey` en `assets/js/portfolio-config.js` permanece intencionalmente vacío. No se debe ejecutar la migración hasta inspeccionar el proyecto con una conexión autorizada y revisar cualquier tabla `portfolio_*` existente. No se hizo ningún cambio remoto.
+La URL y la publishable key pública ya están configuradas. Las consultas REST reales y la interfaz en Chrome se verificaron con los datos de Supabase, en escritorio, móvil y español/inglés. La integración está en `feature/supabase-portfolio`; no se fusionó a `main` ni está publicada todavía en flor125.dev.
 
 ## Tablas
 
@@ -29,15 +29,15 @@ erDiagram
 
 Los campos `_es` y `_en` permiten editar ambos idiomas. Si `_en` queda vacío, se muestra el texto español. Los períodos actuales se conservan como texto; `start_date`, `end_date` e `issued_on` son opcionales y no se inventaron fechas para las tarjetas originales.
 
-## Conectar el proyecto
+## Conexión y mantenimiento
 
-1. Abrir una sesión que tenga disponible el MCP de Supabase de Codex, configurado para `iwllvbwevpflsbtquhiz`, o acceder al dashboard con una cuenta autorizada. No confundirlo con una conexión genérica de base de datos: esta sesión no tiene una conexión configurada.
-2. Inspeccionar las tablas existentes antes de aplicar `supabase/migrations/20261027002058_portfolio_content.sql`. La migración crea exclusivamente tablas `portfolio_*` y carga los 3 proyectos, 3 experiencias y 5 credenciales actuales. Si ya existen tablas con esos nombres, revisar conflictos y detenerse antes de ejecutar; no sobrescribir datos ajenos.
-3. Aplicar la migración solo después de comprobar que es segura, con el MCP autorizado o pegando su contenido completo en **SQL Editor → New query → Run**. Ejecutarla una sola vez. El archivo es transaccional.
-4. Ejecutar `database/verify.sql` y revisar los avisos de seguridad en Supabase.
-5. `assets/js/portfolio-config.js` ya incluye la URL y la **publishable key** pública. Nunca reemplazarla por `service_role`, una secret key ni la contraseña de PostgreSQL.
-6. Ejecutar los advisors de Supabase y verificar la API con esa clave antes de publicar: los GET a `/rest/v1/portfolio_projects`, `/rest/v1/portfolio_experiences` y `/rest/v1/portfolio_credentials` deben devolver solamente filas publicadas. Comprobar también las relaciones y que no existan permisos de escritura pública.
-7. Con el esquema y los permisos confirmados, probar la página conectada y el refresco tras agregar o editar una fila publicada. Luego publicar los archivos. No hace falta cambiar HTML ni redesplegar por cada tarjeta; no se utiliza una suscripción Realtime.
+1. El MCP de Supabase está autorizado para `iwllvbwevpflsbtquhiz`. Verificar siempre la URL y las tablas antes de cambios posteriores.
+2. La migración aplicada está versionada en `supabase/migrations/20261027024908_portfolio_content.sql`, con el mismo identificador que el historial remoto. No volver a ejecutarla ni editarla: para cambiar el esquema, crear una nueva migración.
+3. `assets/js/portfolio-config.js` contiene solo la URL y la **publishable key** pública. Nunca utilizar `service_role`, una secret key ni la contraseña de PostgreSQL en el navegador.
+4. Ejecutar `database/verify.sql` y `database/test-policies.sql` al revisar permisos. El segundo archivo crea datos temporales y revierte su transacción.
+5. Las consultas REST devuelven únicamente contenido publicado y sus relaciones. El frontend marca los contenedores cargados correctamente con `data-content-source="database"` para distinguirlos del HTML de respaldo.
+6. Agregar o modificar contenido desde Table Editor y recargar el portfolio conectado; no hace falta editar HTML ni redesplegar por cada tarjeta. No se utiliza Realtime.
+7. Para publicar esta integración en flor125.dev, revisar y fusionar la rama de funcionalidad a `main`; esa publicación todavía está pendiente.
 
 Las tablas tienen RLS y permisos explícitos de **solo lectura** para visitantes y usuarios autenticados. Los borradores (`published = false`) y sus detalles no son públicos. Las modificaciones se hacen desde el panel de Supabase/SQL Editor con tu cuenta administradora. No hay un panel de administración público.
 

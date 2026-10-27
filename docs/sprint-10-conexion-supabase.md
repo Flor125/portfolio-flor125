@@ -2,6 +2,8 @@
 
 [Volver al índice](README.md)
 
+> Registro histórico. La activación posterior de la base y sus verificaciones reales están en el [sprint 12](sprint-12-activacion-supabase.md).
+
 ## Ficha de entrega
 
 | Campo | Detalle |

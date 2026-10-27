@@ -56,7 +56,7 @@ Después de publicar en GitHub Pages:
 
 ### Contenido desde una base relacional
 
-La integración local de proyectos, experiencia y credenciales con Supabase PostgreSQL está en [database/README.md](database/README.md), junto con el esquema, los datos iniciales y el estado de verificación del proyecto remoto. La conexión real, la aplicación de la migración y la publishable key siguen pendientes. Los proyectos usan un carrusel; las experiencias adicionales se despliegan con una flecha; educación y certificaciones conservan su carrusel. El HTML inicial sirve como respaldo si la base no está configurada o no responde.
+La integración de proyectos, experiencia y credenciales con Supabase PostgreSQL está en [database/README.md](database/README.md), junto con el esquema, los datos iniciales y el estado de verificación del proyecto remoto. La migración ya está aplicada, la clave pública está configurada y se verificaron consultas e interfaz con datos reales. La publicación en `main` sigue pendiente. Los proyectos usan un carrusel; las experiencias adicionales se despliegan con una flecha; educación y certificaciones conservan su carrusel. El HTML inicial sirve como respaldo si la base no está configurada o no responde.
 
 ### Envío propio con Nodemailer
 
