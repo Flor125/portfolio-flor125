@@ -96,7 +96,7 @@ El formulario usa la función de Nodemailer desplegada en `https://portfolio-flo
 
 ### Contacto
 
-[Email](mailto:sombraflorencia097@gmail.com) · [LinkedIn](https://www.linkedin.com/in/sombraflorencia) · [GitHub](https://github.com/Flor125)
+[Email](mailto:sombraflorencia097@gmail.com) · [LinkedIn](https://www.linkedin.com/in/Flor125) · [GitHub](https://github.com/Flor125)
 
 ---
 
@@ -157,4 +157,4 @@ Visit [localhost:5500](http://localhost:5500). No npm installation is required. 
 
 ### Contact
 
-[Email](mailto:sombraflorencia097@gmail.com) · [LinkedIn](https://www.linkedin.com/in/sombraflorencia) · [GitHub](https://github.com/Flor125)
+[Email](mailto:sombraflorencia097@gmail.com) · [LinkedIn](https://www.linkedin.com/in/Flor125) · [GitHub](https://github.com/Flor125)
