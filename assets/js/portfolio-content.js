@@ -78,6 +78,7 @@ function render(key) {
     rows.forEach((row, i) => fragment.append(render(row, i)));
     if (!rows.length) fragment.append(element('p', 'portfolio-empty', t('Próximamente, más novedades.', 'More updates coming soon.')));
     target.replaceChildren(fragment);
+    target.dataset.contentSource = 'database';
     document.dispatchEvent(new CustomEvent('portfolio-content', { detail: { section: key } }));
 }
 document.addEventListener('portfolio-language', () => Object.keys(content).forEach(render));

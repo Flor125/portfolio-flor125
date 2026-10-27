@@ -35,7 +35,7 @@ Los campos `_es` y `_en` permiten editar ambos idiomas. Si `_en` queda vacío, s
 2. Inspeccionar las tablas existentes antes de aplicar `supabase/migrations/20261027002058_portfolio_content.sql`. La migración crea exclusivamente tablas `portfolio_*` y carga los 3 proyectos, 3 experiencias y 5 credenciales actuales. Si ya existen tablas con esos nombres, revisar conflictos y detenerse antes de ejecutar; no sobrescribir datos ajenos.
 3. Aplicar la migración solo después de comprobar que es segura, con el MCP autorizado o pegando su contenido completo en **SQL Editor → New query → Run**. Ejecutarla una sola vez. El archivo es transaccional.
 4. Ejecutar `database/verify.sql` y revisar los avisos de seguridad en Supabase.
-5. Copiar la **publishable key** pública (`sb_publishable_…`) de **Settings → API Keys** a `publishableKey` en `assets/js/portfolio-config.js`. Nunca usar `service_role`, una secret key ni la contraseña de PostgreSQL.
+5. `assets/js/portfolio-config.js` ya incluye la URL y la **publishable key** pública. Nunca reemplazarla por `service_role`, una secret key ni la contraseña de PostgreSQL.
 6. Ejecutar los advisors de Supabase y verificar la API con esa clave antes de publicar: los GET a `/rest/v1/portfolio_projects`, `/rest/v1/portfolio_experiences` y `/rest/v1/portfolio_credentials` deben devolver solamente filas publicadas. Comprobar también las relaciones y que no existan permisos de escritura pública.
 7. Con el esquema y los permisos confirmados, probar la página conectada y el refresco tras agregar o editar una fila publicada. Luego publicar los archivos. No hace falta cambiar HTML ni redesplegar por cada tarjeta; no se utiliza una suscripción Realtime.
 
@@ -72,6 +72,6 @@ Agregar filas en `portfolio_credentials` con `organization_id`, `kind` (`educati
 - `database/verify.sql`: tablas, RLS, privilegios, relaciones y cantidades en PostgreSQL.
 - Para probar la interfaz sin credenciales, el HTML inicial conserva las tarjetas actuales. Para comprobar crecimiento, crear tarjetas de prueba en un entorno de desarrollo y confirmar los tres carruseles, el despliegue de experiencia y ambos idiomas.
 
-La migración fue validada localmente con un motor PostgreSQL (PGlite), incluidas lectura anónima y denegación de escritura/borradores. La verificación remota debe repetirse tras conectar la cuenta autorizada; la prueba local no confirma el despliegue en Supabase.
+La migración fue validada localmente con PostgreSQL/PGlite y aplicada a Supabase. `database/test-policies.sql` pasó en remoto: los borradores y sus párrafos/organizaciones quedan ocultos, sin permisos públicos de escritura. Se verificaron las cantidades 3/3/5 y RLS en las siete tablas. El advisor de seguridad no reportó hallazgos. El de rendimiento solo informó índices aún sin uso; se conservan porque la base es nueva.
 
 `database/portfolio-seed.json` es la copia inicial del contenido. `scripts/build-portfolio-sql.py` reconstruye la migración inicial desde ese archivo; no debe usarse para sobrescribir migraciones ya aplicadas. Los cambios posteriores se realizan en Supabase y, si modifican el esquema, mediante una nueva migración.
