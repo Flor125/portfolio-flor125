@@ -1,6 +1,6 @@
 # Florencia Sombra · Portfolio
 
-[Registro de sprints y pendientes](SPRINTS.md)
+[Documentación detallada de sprints](docs/README.md)
 
 [Español](#español) · [English](#english)
 
