@@ -9,25 +9,38 @@ const video = document.querySelector('.hero-video');
         updateMotion();
 
         const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
-        document.querySelectorAll('.project-perspective').forEach((container) => {
-            const card = container.querySelector('.project-card');
-            const reset = () => {
-                card.style.removeProperty('transform');
-                card.classList.remove('is-tilted');
-            };
-            container.addEventListener('pointermove', (event) => {
-                if (reducedMotion.matches || !finePointer.matches || event.pointerType === 'touch') return;
-                const bounds = container.getBoundingClientRect();
-                const x = (event.clientX - bounds.left) / bounds.width - 0.5;
-                const y = (event.clientY - bounds.top) / bounds.height - 0.5;
-                card.style.transform = `rotateX(${-y * 12}deg) rotateY(${x * 12}deg)`;
-                card.classList.add('is-tilted');
+        const initializedProjects = new WeakSet();
+        function initializeProjects() {
+            document.querySelectorAll('.project-perspective').forEach((container) => {
+                if (initializedProjects.has(container)) return;
+                initializedProjects.add(container);
+                const card = container.querySelector('.project-card');
+                const reset = () => {
+                    card.style.removeProperty('transform');
+                    card.classList.remove('is-tilted');
+                };
+                container.addEventListener('pointermove', (event) => {
+                    if (reducedMotion.matches || !finePointer.matches || event.pointerType === 'touch') return;
+                    const bounds = container.getBoundingClientRect();
+                    const x = (event.clientX - bounds.left) / bounds.width - 0.5;
+                    const y = (event.clientY - bounds.top) / bounds.height - 0.5;
+                    card.style.transform = `rotateX(${-y * 12}deg) rotateY(${x * 12}deg)`;
+                    card.classList.add('is-tilted');
+                });
+                container.addEventListener('pointerleave', reset);
+                container.addEventListener('pointercancel', reset);
+                // Use shared listeners below so replaced cards can be collected.
             });
-            container.addEventListener('pointerleave', reset);
-            container.addEventListener('pointercancel', reset);
-            reducedMotion.addEventListener('change', reset);
-            finePointer.addEventListener('change', reset);
-        });
+        }
+        function resetProjects() {
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.style.removeProperty('transform'); card.classList.remove('is-tilted');
+            });
+        }
+        reducedMotion.addEventListener('change', resetProjects);
+        finePointer.addEventListener('change', resetProjects);
+        document.addEventListener('portfolio-content', initializeProjects);
+        initializeProjects();
 
 // Wordmark «sombra»: una máscara de texto se convierte en puntos con resortes.
 document.querySelectorAll('.hwf-root').forEach((root) => {

@@ -52,6 +52,10 @@ Después de publicar en GitHub Pages:
 4. Probá también [Meta Sharing Debugger](https://developers.facebook.com/tools/debug/) y solicitá una nueva extracción si muestra datos anteriores. Esto no garantiza actualizar la caché de WhatsApp.
 5. Pegá el enlace en un mensaje nuevo de WhatsApp y esperá a que aparezca la tarjeta antes de enviarlo. Una vista previa anterior puede permanecer en caché; si cambiás la imagen en el futuro, usá un nombre nuevo y actualizá ambas etiquetas de imagen.
 
+### Contenido desde una base relacional
+
+La integración local de proyectos, experiencia y credenciales con Supabase PostgreSQL está en [database/README.md](database/README.md), junto con el esquema, los datos iniciales y el estado de verificación del proyecto remoto. La conexión real, la aplicación de la migración y la publishable key siguen pendientes. Los proyectos usan un carrusel; las experiencias adicionales se despliegan con una flecha; educación y certificaciones conservan su carrusel. El HTML inicial sirve como respaldo si la base no está configurada o no responde.
+
 ### Envío propio con Nodemailer
 
 El formulario usa la función de Nodemailer desplegada en `https://portfolio-flor125-contact-api.vercel.app/api/contact`. Al confirmar la aceptación por Gmail, muestra el popup «Envío confirmado». Si falla, conserva los campos. La configuración y los pasos de despliegue están en [contact-api/README.md](contact-api/README.md).

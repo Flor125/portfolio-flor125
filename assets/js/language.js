@@ -1,5 +1,8 @@
 (() => {
     const translations = {
+        'Proyecto anterior': 'Previous project', 'Proyecto siguiente': 'Next project',
+        'Ver toda la experiencia': 'View all experience', 'Ver menos': 'Show less',
+
         'Envío confirmado': 'Message sent',
         'Gracias por escribirme. Te responderé a tu correo.': 'Thanks for getting in touch. I will reply to your email.',
         'Cerrar': 'Close', 'Enviando…': 'Sending…',

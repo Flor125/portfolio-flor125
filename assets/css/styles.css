@@ -1249,3 +1249,22 @@ html[data-theme="light"] .education-intro, html[data-theme="light"] .education-c
 @media (prefers-reduced-motion: reduce) {
     .contact-confirmation[open], .contact-confirmation[open]::backdrop { animation: none; }
 }
+
+/* Proyectos dinámicos: conserva las tarjetas y permite crecer sin agregar filas. */
+.projects-carousel { grid-column: 1 / -1; min-width: 0; position: relative; width: 100%; }
+.projects-carousel .projects-grid { display: flex; gap: 28px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 12px 4px 28px; margin: 0; }
+.projects-carousel .projects-grid::-webkit-scrollbar { display: none; }
+.projects-carousel .project-perspective { flex: 0 0 calc((100% - 56px) / 3); scroll-snap-align: start; }
+.projects-prev, .projects-next { position: absolute; top: 50%; transform: translateY(-50%); display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid currentColor; border-radius: 50%; background: var(--background); color: var(--cream); box-shadow: 0 2px 8px #0002; font-size: 28px; cursor: pointer; z-index: 2; }
+.projects-prev { left: -16px; } .projects-next { right: -16px; }
+.projects-prev:disabled, .projects-next:disabled { visibility: hidden; }
+.impact-row[hidden], .experience-toggle[hidden] { display: none; }
+.experience-toggle { display: flex; align-items: center; justify-content: center; gap: 20px; margin: 28px auto 0; padding: 14px 24px; border: 1px solid currentColor; border-radius: 30px; background: transparent; color: inherit; cursor: pointer; }
+.experience-toggle-arrow { font-size: 24px; }
+.portfolio-empty { padding: 24px; }
+@media (max-width: 1000px) { .projects-carousel .project-perspective { flex-basis: calc((100% - 28px) / 2); } }
+@media (max-width: 600px) {
+    .projects-carousel .projects-grid { gap: 16px; }
+    .projects-carousel .project-perspective { flex-basis: 100%; }
+    .projects-prev { left: -10px; } .projects-next { right: -10px; }
+}
