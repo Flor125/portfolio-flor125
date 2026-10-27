@@ -1,5 +1,7 @@
 # Florencia Sombra · Portfolio
 
+[Documentación detallada de sprints](docs/README.md)
+
 [Español](#español) · [English](#english)
 
 ## Español
