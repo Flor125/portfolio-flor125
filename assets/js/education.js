@@ -6,8 +6,8 @@
     const next = document.querySelector('.education-next');
     const motion = matchMedia('(prefers-reduced-motion: reduce)');
     function update() {
-        previous.disabled = track.scrollLeft < 2;
-        next.disabled = track.scrollWidth - track.clientWidth - track.scrollLeft < 2;
+        previous.disabled = track.scrollLeft <= 8;
+        next.disabled = track.scrollWidth - track.clientWidth - track.scrollLeft <= 8;
     }
     function move(direction) {
         track.scrollBy({ left: direction * track.clientWidth * .8, behavior: motion.matches ? 'instant' : 'smooth' });
@@ -22,5 +22,6 @@
     });
     new ResizeObserver(update).observe(track);
     document.addEventListener('portfolio-language', () => requestAnimationFrame(update));
+    document.addEventListener('portfolio-content', () => requestAnimationFrame(update));
     update();
 })();

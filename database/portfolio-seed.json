@@ -1,0 +1,310 @@
+{
+  "projects": [
+    {
+      "slug": "padron-electoral",
+      "sort_order": 1,
+      "title": {
+        "es": "Padrón Electoral",
+        "en": "Electoral Register"
+      },
+      "description": {
+        "es": "Sistema de gestión de registros electorales desarrollado en Java, con interfaz gráfica y persistencia de datos en MySQL",
+        "en": "Electoral record management system built in Java, with a graphical interface and MySQL data persistence."
+      },
+      "category": "JAVA DESKTOP",
+      "url": "https://github.com/Flor125/padron",
+      "image_path": null,
+      "image_alt": {
+        "es": "",
+        "en": ""
+      },
+      "image_fill": false,
+      "status": {
+        "es": "",
+        "en": ""
+      },
+      "technologies": [
+        "Java",
+        "Swing",
+        "JDBC",
+        "MySQL"
+      ]
+    },
+    {
+      "slug": "kiosco-management-system",
+      "sort_order": 2,
+      "title": {
+        "es": "Kiosco Management System",
+        "en": "Kiosco Management System"
+      },
+      "description": {
+        "es": "Sistema de gestión de inventario y ventas desplegado en IBM LinuxONE Community Cloud, que integra una aplicación web con procesamiento batch en COBOL.",
+        "en": "Inventory and sales management system deployed on IBM LinuxONE Community Cloud, integrating a web application with COBOL batch processing."
+      },
+      "category": "BACKEND & MAINFRAME",
+      "url": "https://github.com/Flor125/kiosco-management-system-mainframe",
+      "image_path": "assets/images/Inventory App Smartphone Mockups.png",
+      "image_alt": {
+        "es": "Mockup de la aplicación de inventario Kiosco Management System",
+        "en": "Kiosco Management System inventory app mockup"
+      },
+      "image_fill": true,
+      "status": {
+        "es": "",
+        "en": ""
+      },
+      "technologies": [
+        "Python",
+        "Flask",
+        "COBOL",
+        "Db2",
+        "Docker"
+      ]
+    },
+    {
+      "slug": "seeki",
+      "sort_order": 3,
+      "title": {
+        "es": "Seeki",
+        "en": "Seeki"
+      },
+      "description": {
+        "es": "Aplicación móvil en desarrollo para crear CVs, adaptarlos a ofertas laborales y organizar postulaciones.",
+        "en": "Mobile app in development for creating resumes, tailoring them to job openings, and tracking applications."
+      },
+      "category": "MOBILE DEVELOPMENT",
+      "url": null,
+      "image_path": "assets/images/Florencia Resume App Showcase.png",
+      "image_alt": {
+        "es": "Mockup de la aplicación móvil Seeki para crear currículums",
+        "en": "Seeki resume builder mobile app mockup"
+      },
+      "image_fill": false,
+      "status": {
+        "es": "En desarrollo",
+        "en": "In development"
+      },
+      "technologies": [
+        "Kotlin",
+        "Compose",
+        "Firebase"
+      ]
+    }
+  ],
+  "experiences": [
+    {
+      "slug": "grantfox",
+      "sort_order": 1,
+      "organization": "GrantFox",
+      "title": {
+        "es": "GrantFox",
+        "en": "GrantFox"
+      },
+      "subtitle": {
+        "es": "Open Source Contributor",
+        "en": "Open Source Contributor"
+      },
+      "period": {
+        "es": "2026 – Actualidad",
+        "en": "2026 – Present"
+      },
+      "role": {
+        "es": "Software Developer Contributor",
+        "en": "Software Developer Contributor"
+      },
+      "location": {
+        "es": "Remoto",
+        "en": "Remote"
+      },
+      "sector": {
+        "es": "Desarrollo de software / Open Source",
+        "en": "Software development / Open Source"
+      },
+      "image_path": "https://cdn.21st.dev/assets/mirror/25/2501b7e36b9dfc22ae0ade86672f90657a84ab125de956c829ae945ea020807d.jpg",
+      "paragraphs": [
+        {
+          "es": "Analicé problemas reportados en repositorios colaborativos e implementé correcciones y mejoras en aplicaciones existentes.",
+          "en": "I analyzed issues reported in collaborative repositories and implemented fixes and improvements in existing applications."
+        },
+        {
+          "es": "Contribuí al desarrollo de funcionalidades y endpoints de verificación del estado de servicios. Trabajé con Git, GitHub, pull requests y revisiones de código.",
+          "en": "I contributed features and service health-check endpoints, working with Git, GitHub, pull requests, and code reviews."
+        }
+      ],
+      "label": {
+        "es": "GrantFox — Open Source",
+        "en": "GrantFox — Open Source"
+      }
+    },
+    {
+      "slug": "practica-profesional",
+      "sort_order": 2,
+      "organization": "Universidad Nacional de Villa Mercedes",
+      "title": {
+        "es": "Práctica Profesional Supervisada",
+        "en": "Supervised Professional Practice"
+      },
+      "subtitle": {
+        "es": "Desarrollo de aplicación de gestión comercial",
+        "en": "Business management application development"
+      },
+      "period": {
+        "es": "Marzo 2025 – Marzo 2026",
+        "en": "March 2025 – March 2026"
+      },
+      "role": {
+        "es": "Desarrolladora de Software",
+        "en": "Software Developer"
+      },
+      "location": {
+        "es": "Villa Mercedes, San Luis",
+        "en": "Villa Mercedes, San Luis"
+      },
+      "sector": {
+        "es": "Desarrollo de software / Gestión comercial",
+        "en": "Software development / Business management"
+      },
+      "image_path": "https://cdn.21st.dev/assets/mirror/df/df53cb4060307c6af7dcd889264e29c4699fb65cacd0a51675255888f8d8d96f.jpg",
+      "paragraphs": [
+        {
+          "es": "Realicé el relevamiento de necesidades, diseñé e implementé funcionalidades para la administración de información comercial e inventario.",
+          "en": "I gathered requirements and designed and implemented features for managing business information and inventory."
+        },
+        {
+          "es": "Integré tecnologías como Python, Flask y bases de datos, realizando pruebas funcionales, validación de información y presentación de resultados ante una evaluación académica.",
+          "en": "I integrated Python, Flask, and databases, performed functional testing and data validation, and presented the results for academic evaluation."
+        }
+      ],
+      "label": {
+        "es": "Universidad Nacional de Villa Mercedes",
+        "en": "Universidad Nacional de Villa Mercedes"
+      }
+    },
+    {
+      "slug": "desafio-latam",
+      "sort_order": 3,
+      "organization": "Desafío LATAM",
+      "title": {
+        "es": "Desafío LATAM",
+        "en": "Desafío LATAM"
+      },
+      "subtitle": {
+        "es": "Programa de colaboración intergeneracional para desarrollar soluciones digitales accesibles a problemas reales.",
+        "en": "An intergenerational collaboration program developing accessible digital solutions to real-world problems."
+      },
+      "period": {
+        "es": "Agosto – Septiembre 2026",
+        "en": "August – September 2026"
+      },
+      "role": {
+        "es": "Colaboradora de Desarrollo y UX",
+        "en": "Development & UX Collaborator"
+      },
+      "location": {
+        "es": "Remoto — Chile",
+        "en": "Remote — Chile"
+      },
+      "sector": {
+        "es": "Desarrollo web / UX / Innovación",
+        "en": "Web development / UX / Innovation"
+      },
+      "image_path": "https://cdn.21st.dev/assets/mirror/e0/e0737d3f72c598463cd478c389540cf3b14909b84cefef714fbd4d55813b1aa6.jpg",
+      "paragraphs": [
+        {
+          "es": "Trabajé durante aproximadamente dos meses junto a una profesional senior en el diseño y desarrollo de un MVP para la gestión de turnos de licencias de conducir.",
+          "en": "For approximately two months, I worked alongside a senior professional to design and develop an MVP for managing driving license appointments."
+        },
+        {
+          "es": "Participé en la construcción de interfaces con Figma y Lovable, utilizando herramientas de inteligencia artificial para acelerar el prototipado y desarrollo. Colaboré en la organización de tareas, reuniones de seguimiento y validación de la propuesta con 27 participantes.",
+          "en": "I helped build interfaces with Figma and Lovable, using AI tools to accelerate prototyping and development. I collaborated on task planning, progress meetings, and validating the proposal with 27 participants."
+        }
+      ],
+      "label": {
+        "es": "Becada",
+        "en": "Scholarship recipient"
+      }
+    }
+  ],
+  "credentials": [
+    {
+      "slug": "unvime",
+      "sort_order": 1,
+      "kind": "education",
+      "organization": "Universidad Nacional de Villa Mercedes",
+      "title": {
+        "es": "Programadora Universitaria de Sistemas",
+        "en": "Associate Degree in System Programming"
+      },
+      "url": "https://registrograduados.siu.edu.ar/consulta.php?id_tipo_documento%5E%5EVlR4S0pDbi9qZ3BQUkVrOFAyMGNpUT09%7C%7Cnro_documento%5E%5EcFJlYWlQdG9LdXhGb1hnN3d0OFpsQT09%7C%7Cnombres%5E%5EUjFUakt4cTlSaE1SS0tHSFFOQkxOZz09%7C%7Capellidos%5E%5ESEdQaFRUbGVRWGNZNUpjQXkwYkJNZz09",
+      "image_path": "assets/images/UNViMe.png",
+      "image_alt": {
+        "es": "Universidad Nacional de Villa Mercedes",
+        "en": "Universidad Nacional de Villa Mercedes"
+      }
+    },
+    {
+      "slug": "ibm-mainframe-developer",
+      "sort_order": 2,
+      "kind": "certification",
+      "organization": "IBM & LearnQuest",
+      "title": {
+        "es": "IBM Mainframe Developer",
+        "en": "IBM Mainframe Developer"
+      },
+      "url": "https://coursera.org/share/813eda16ddae3ede23facf0dc32981e8",
+      "image_path": "assets/images/Coursera FPUYVS949317-1.png",
+      "image_alt": {
+        "es": "Certificado IBM Mainframe Developer de IBM y LearnQuest",
+        "en": "IBM Mainframe Developer certificate from IBM and LearnQuest"
+      }
+    },
+    {
+      "slug": "ibm-zos-practitioner",
+      "sort_order": 3,
+      "kind": "certification",
+      "organization": "IBM & Coursera",
+      "title": {
+        "es": "IBM z/OS Mainframe Practitioner",
+        "en": "IBM z/OS Mainframe Practitioner"
+      },
+      "url": "https://coursera.org/share/256300a3595b414c249972f53db222ff",
+      "image_path": "assets/images/Coursera QHJIMTA7C94O-1.png",
+      "image_alt": {
+        "es": "Certificado IBM z/OS Mainframe Practitioner",
+        "en": "IBM z/OS Mainframe Practitioner certificate"
+      }
+    },
+    {
+      "slug": "ibm-cics",
+      "sort_order": 4,
+      "kind": "certification",
+      "organization": "IBM",
+      "title": {
+        "es": "Modernize Applications with IBM CICS",
+        "en": "Modernize Applications with IBM CICS"
+      },
+      "url": "https://www.credly.com/badges/a29cd4c8-ef90-410c-b21d-1f4b2c81fb0a/public_url",
+      "image_path": "assets/images/IBMDesign20261025-20-6rwo75-1.png",
+      "image_alt": {
+        "es": "Certificado Modernize Applications with IBM CICS",
+        "en": "Modernize Applications with IBM CICS certificate"
+      }
+    },
+    {
+      "slug": "efset-c1",
+      "sort_order": 5,
+      "kind": "certification",
+      "organization": "EF SET Cert",
+      "title": {
+        "es": "C1 Advanced",
+        "en": "C1 Advanced"
+      },
+      "url": "https://cert.efset.org/a19rjQ",
+      "image_path": "assets/images/EF SET Certificate-1.png",
+      "image_alt": {
+        "es": "Certificado EF SET C1 Advanced",
+        "en": "EF SET C1 Advanced certificate"
+      }
+    }
+  ]
+}

@@ -19,23 +19,24 @@ Los sprints agrupan retrospectivamente el trabajo realizado. No representan per�
 | 09 | [Contenido relacional y tarjetas dinámicas](sprint-09-contenido-relacional.md) | Preparado localmente; no aplicado ni publicado |
 | 10 | [Conexión de Supabase y acceso al proyecto](sprint-10-conexion-supabase.md) | Conexión verificada; esquema sin modificar |
 | 11 | [Documentación de entregas por sprint](sprint-11-documentacion-produccion.md) | Publicado en main; ampliado en esta entrega |
+| 12 | [Activación de Supabase y verificación real](sprint-12-activacion-supabase.md) | Base activa; integración verificada en feature; pendiente de main |
 
 ## Estado de producción y trabajo pendiente
 
 - La portada vigente es `assets/images/portfolio-preview-v2.png`.
 - Contacto usa Nodemailer en Vercel; el popup depende de la aceptación SMTP y conserva los campos ante error.
-- La integración relacional del sprint 09 permanece local en `feature/supabase-portfolio`, sin publicación ni aplicación remota registrada.
-- El acceso MCP al proyecto Supabase ya fue verificado; eso no equivale a haber creado las tablas ni conectado el frontend.
+- La integración del sprint 09 está versionada en `feature/supabase-portfolio`; su activación remota y verificación se registran en el sprint 12.
+- Las siete tablas están creadas en Supabase y el frontend de la rama feature consulta datos reales. El sitio de producción en `main` todavía no incluye la integración.
 
-## Próxima entrega: activación de la base
+## Próxima entrega: publicar la integración
 
-- [ ] Inspeccionar nuevamente el esquema y las migraciones remotas.
-- [ ] Revisar y aplicar la migración al proyecto correcto.
-- [ ] Configurar la publishable key pública del frontend.
-- [ ] Verificar RLS, relaciones, permisos y advisors.
-- [ ] Probar consultas y tarjetas con datos reales en ambos idiomas y tamaños de pantalla.
-- [ ] Revisar el resultado antes de autorizar la publicación de la integración.
-- [ ] Registrar el commit, el despliegue y sus comprobaciones en un nuevo archivo de sprint.
+- [x] Inspeccionar el esquema y las migraciones remotas.
+- [x] Aplicar la migración al proyecto correcto.
+- [x] Configurar la publishable key pública del frontend.
+- [x] Verificar RLS, relaciones, permisos y advisors.
+- [x] Probar consultas y tarjetas con datos reales en ambos idiomas y tamaños de pantalla.
+- [ ] Revisar la rama y autorizar su fusión a `main`.
+- [ ] Comprobar el despliegue final en flor125.dev.
 
 ## Convención para próximos sprints
 

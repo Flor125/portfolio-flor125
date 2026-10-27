@@ -136,7 +136,8 @@
                 <p>Proyectos donde combino backend, modernización de sistemas y construcción de productos.</p>
             </div>
         <!-- Proyectos y enlaces a sus repositorios públicos. -->
-        <div class="projects-grid" aria-label="Proyectos">
+        <div class="projects-carousel">
+        <div class="projects-grid" id="projects-track" tabindex="0" role="region" aria-label="Proyectos">
             <div class="project-perspective">
                 <a class="project-card project-card-link" href="https://github.com/Flor125/padron" target="_blank" rel="noopener noreferrer" aria-label="Padrón Electoral: ver repositorio en GitHub (abre en otra pestaña)">
                     <span class="project-number card-layer">01 / JAVA DESKTOP</span>
@@ -165,13 +166,16 @@
                 </article>
             </div>
         </div>
+        <button class="projects-prev" type="button" aria-label="Proyecto anterior" aria-controls="projects-track">‹</button>
+        <button class="projects-next" type="button" aria-label="Proyecto siguiente" aria-controls="projects-track">›</button>
+        </div>
 
         </section>
 </div>
 <div class="section-shell">
 <section class="impact-experience" aria-labelledby="experience-title" id="experiencia">
             <div class="impact-heading"><span>03 / Mi recorrido</span><h2 id="experience-title">Experiencia</h2><p>Contenido de ejemplo · Próximamente, mi experiencia y mis proyectos reales.</p></div>
-            <div class="impact-list">
+            <div class="impact-list" id="experience-list">
                 <article class="impact-row" aria-labelledby="experience-1">
                     <img class="impact-background" src="https://cdn.21st.dev/assets/mirror/25/2501b7e36b9dfc22ae0ade86672f90657a84ab125de956c829ae945ea020807d.jpg" alt="" loading="lazy" decoding="async">
                     <div class="impact-company"><span class="impact-index">01 / GrantFox — Open Source</span><h3 id="experience-1">GrantFox</h3><p>Open Source Contributor</p><p class="impact-period">2026 – Actualidad</p></div>
@@ -191,6 +195,7 @@
                     <div class="impact-description"><p>Trabajé durante aproximadamente dos meses junto a una profesional senior en el diseño y desarrollo de un MVP para la gestión de turnos de licencias de conducir.</p><p>Participé en la construcción de interfaces con Figma y Lovable, utilizando herramientas de inteligencia artificial para acelerar el prototipado y desarrollo. Colaboré en la organización de tareas, reuniones de seguimiento y validación de la propuesta con 27 participantes.</p></div>
                 </article>
             </div>
+            <button class="experience-toggle" type="button" aria-expanded="false" aria-controls="experience-list" hidden><span class="experience-toggle-label">Ver toda la experiencia</span><span class="experience-toggle-arrow" aria-hidden="true">↓</span></button>
         </section>
 </div>
 <div class="section-shell">
@@ -198,7 +203,7 @@
     <span class="section-label">04 / Formación continua</span>
     <h2 class="page-title" id="education-title">Educación y certificados</h2>
     <p class="education-intro">Mi formación académica y los aprendizajes que acompañan mi desarrollo profesional.</p>
-<div class="offers-reference"><div class="education-carousel"><div class="education-grid" id="education-track" tabindex="0" role="region" aria-label="Hotel offers"><a class="offer-card offer-card-link" href="https://registrograduados.siu.edu.ar/consulta.php?id_tipo_documento%5E%5EVlR4S0pDbi9qZ3BQUkVrOFAyMGNpUT09%7C%7Cnro_documento%5E%5EcFJlYWlQdG9LdXhGb1hnN3d0OFpsQT09%7C%7Cnombres%5E%5EUjFUakt4cTlSaE1SS0tHSFFOQkxOZz09%7C%7Capellidos%5E%5ESEdQaFRUbGVRWGNZNUpjQXkwYkJNZz09" target="_blank" rel="noopener noreferrer" aria-label="Universidad Nacional de Villa Mercedes: consultar título en el registro de graduados (abre en otra pestaña)"><div class="offer-image"><img src="assets/images/UNViMe.png" alt="Universidad Nacional de Villa Mercedes" width="256" height="160" loading="lazy"></div><div class="offer-content"><div class="offer-title-row"><h3>Universidad Nacional de Villa Mercedes</h3></div><p class="offer-subtitle">Programadora Universitaria de Sistemas</p></div></a><a class="offer-card offer-card-link" href="https://coursera.org/share/813eda16ddae3ede23facf0dc32981e8" target="_blank" rel="noopener noreferrer" aria-label="IBM &amp; LearnQuest: ver certificado en Coursera (abre en otra pestaña)"><div class="offer-image"><img src="assets/images/Coursera FPUYVS949317-1.png" alt="Certificado IBM Mainframe Developer de IBM y LearnQuest" width="256" height="160" loading="lazy"></div><div class="offer-content"><div class="offer-title-row"><h3>IBM &amp; LearnQuest</h3></div><p class="offer-subtitle">IBM Mainframe Developer</p></div></a><a class="offer-card offer-card-link" href="https://coursera.org/share/256300a3595b414c249972f53db222ff" target="_blank" rel="noopener noreferrer" aria-label="IBM &amp; Coursera: ver certificado en Coursera (abre en otra pestaña)"><div class="offer-image"><img src="assets/images/Coursera QHJIMTA7C94O-1.png" alt="Certificado IBM z/OS Mainframe Practitioner" width="256" height="160" loading="lazy"></div><div class="offer-content"><div class="offer-title-row"><h3>IBM &amp; Coursera</h3></div><p class="offer-subtitle">IBM z/OS Mainframe Practitioner</p></div></a><a class="offer-card offer-card-link" href="https://www.credly.com/badges/a29cd4c8-ef90-410c-b21d-1f4b2c81fb0a/public_url" target="_blank" rel="noopener noreferrer" aria-label="IBM: ver certificado en Credly (abre en otra pestaña)"><div class="offer-image"><img src="assets/images/IBMDesign20261025-20-6rwo75-1.png" alt="Certificado Modernize Applications with IBM CICS" width="256" height="160" loading="lazy"></div><div class="offer-content"><div class="offer-title-row"><h3>IBM</h3></div><p class="offer-subtitle">Modernize Applications with IBM CICS</p></div></a><a class="offer-card offer-card-link" href="https://cert.efset.org/a19rjQ" target="_blank" rel="noopener noreferrer" aria-label="EF SET Cert: ver certificado C1 Advanced (abre en otra pestaña)"><div class="offer-image"><img src="assets/images/EF SET Certificate-1.png" alt="Certificado EF SET C1 Advanced" width="256" height="160" loading="lazy"></div><div class="offer-content"><div class="offer-title-row"><h3>EF SET Cert</h3></div><p class="offer-subtitle">C1 Advanced</p></div></a></div><button class="education-prev" type="button" aria-label="Scroll left" aria-controls="education-track">‹</button><button class="education-next" type="button" aria-label="Scroll right" aria-controls="education-track">›</button></div></div>
+<div class="offers-reference"><div class="education-carousel"><div class="education-grid" id="education-track" tabindex="0" role="region" aria-label="Educación y certificados"><a class="offer-card offer-card-link" href="https://registrograduados.siu.edu.ar/consulta.php?id_tipo_documento%5E%5EVlR4S0pDbi9qZ3BQUkVrOFAyMGNpUT09%7C%7Cnro_documento%5E%5EcFJlYWlQdG9LdXhGb1hnN3d0OFpsQT09%7C%7Cnombres%5E%5EUjFUakt4cTlSaE1SS0tHSFFOQkxOZz09%7C%7Capellidos%5E%5ESEdQaFRUbGVRWGNZNUpjQXkwYkJNZz09" target="_blank" rel="noopener noreferrer" aria-label="Universidad Nacional de Villa Mercedes: consultar título en el registro de graduados (abre en otra pestaña)"><div class="offer-image"><img src="assets/images/UNViMe.png" alt="Universidad Nacional de Villa Mercedes" width="256" height="160" loading="lazy"></div><div class="offer-content"><div class="offer-title-row"><h3>Universidad Nacional de Villa Mercedes</h3></div><p class="offer-subtitle">Programadora Universitaria de Sistemas</p></div></a><a class="offer-card offer-card-link" href="https://coursera.org/share/813eda16ddae3ede23facf0dc32981e8" target="_blank" rel="noopener noreferrer" aria-label="IBM &amp; LearnQuest: ver certificado en Coursera (abre en otra pestaña)"><div class="offer-image"><img src="assets/images/Coursera FPUYVS949317-1.png" alt="Certificado IBM Mainframe Developer de IBM y LearnQuest" width="256" height="160" loading="lazy"></div><div class="offer-content"><div class="offer-title-row"><h3>IBM &amp; LearnQuest</h3></div><p class="offer-subtitle">IBM Mainframe Developer</p></div></a><a class="offer-card offer-card-link" href="https://coursera.org/share/256300a3595b414c249972f53db222ff" target="_blank" rel="noopener noreferrer" aria-label="IBM &amp; Coursera: ver certificado en Coursera (abre en otra pestaña)"><div class="offer-image"><img src="assets/images/Coursera QHJIMTA7C94O-1.png" alt="Certificado IBM z/OS Mainframe Practitioner" width="256" height="160" loading="lazy"></div><div class="offer-content"><div class="offer-title-row"><h3>IBM &amp; Coursera</h3></div><p class="offer-subtitle">IBM z/OS Mainframe Practitioner</p></div></a><a class="offer-card offer-card-link" href="https://www.credly.com/badges/a29cd4c8-ef90-410c-b21d-1f4b2c81fb0a/public_url" target="_blank" rel="noopener noreferrer" aria-label="IBM: ver certificado en Credly (abre en otra pestaña)"><div class="offer-image"><img src="assets/images/IBMDesign20261025-20-6rwo75-1.png" alt="Certificado Modernize Applications with IBM CICS" width="256" height="160" loading="lazy"></div><div class="offer-content"><div class="offer-title-row"><h3>IBM</h3></div><p class="offer-subtitle">Modernize Applications with IBM CICS</p></div></a><a class="offer-card offer-card-link" href="https://cert.efset.org/a19rjQ" target="_blank" rel="noopener noreferrer" aria-label="EF SET Cert: ver certificado C1 Advanced (abre en otra pestaña)"><div class="offer-image"><img src="assets/images/EF SET Certificate-1.png" alt="Certificado EF SET C1 Advanced" width="256" height="160" loading="lazy"></div><div class="offer-content"><div class="offer-title-row"><h3>EF SET Cert</h3></div><p class="offer-subtitle">C1 Advanced</p></div></a></div><button class="education-prev" type="button" aria-label="Tarjeta anterior" aria-controls="education-track">‹</button><button class="education-next" type="button" aria-label="Tarjeta siguiente" aria-controls="education-track">›</button></div></div>
 </section>
 </div>
 <div class="section-shell">
@@ -292,5 +297,8 @@
     <script src="assets/js/theme.js" defer></script>
     <script src="assets/js/contact-cards.js" defer></script>
     <script src="assets/js/education.js" defer></script>
+    <script src="assets/js/portfolio-ui.js" defer></script>
+    <script src="assets/js/portfolio-config.js" defer></script>
+    <script src="assets/js/portfolio-content.js" type="module"></script>
 </body>
 </html>
